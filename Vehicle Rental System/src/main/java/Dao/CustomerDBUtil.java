@@ -8,28 +8,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Customer;
+import Model.DBConnect;
 
 public class CustomerDBUtil {
+	
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
 	
 	public static List<Customer> validate(String userName, String password) {
 		
 		ArrayList<Customer> cus = new ArrayList<>();
 		
-		//create database connection
-		String url = "jdbc:mysql://localhost:3306/vehicle_rental";
-		String user = "root";
-		String pass = "1234";
-		
 		//validate
 		
 		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			Connection con = DriverManager.getConnection(url, user, pass); // call connection
-			Statement stmt = con.createStatement();			
+			con = DBConnect.getConnection(); // call DBConnect class
+			stmt = con.createStatement();
 			String sql = "select * from customer where userName='"+userName+"' and password='"+password+"'"; // write query			
-			ResultSet rs = stmt.executeQuery(sql); // for run sql query
+			rs = stmt.executeQuery(sql); // for run sql query
 			
 			if(rs.next()) {
 				int id = rs.getInt(1);
