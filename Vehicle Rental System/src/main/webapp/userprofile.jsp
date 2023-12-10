@@ -93,6 +93,22 @@
 	<a href="${cusupdate}">
 	<input type="button" name="update" value="Update My Data">
 	</a>
+	
+	<br>
+	
+	<c:url value="deleteProfile.jsp" var="cusdelete">
+		<c:param name="id" value="${id}"/>
+		<c:param name="name" value="${name}"/>
+		<c:param name="email" value="${email}"/>
+		<c:param name="mobileNo" value="${mobileNo}"/>
+		<c:param name="userName" value="${userName}"/>
+		<c:param name="password" value="${password}"/>
+	</c:url>
+	
+	<a href="${cusdelete}">
+		<input type="button" name="delete" value="Delete Account">
+	</a>
+	
 
 </body>
 </html>
