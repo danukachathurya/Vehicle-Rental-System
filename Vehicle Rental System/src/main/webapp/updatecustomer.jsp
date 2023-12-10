@@ -17,17 +17,38 @@
 		String password = request.getParameter("password");
 	%>
 
-	<from action="update" method="post">
-		Customer ID <input type="text" name="cusid" value="<%= id %>" readonly><br>
-		Name <input type="text" name="name" value="<%= name %>"><br>
-		Email <input type="text" name="email" value="<%= email %>"><br>
-		Mobile Number <input type="text" name="mobileNo" value="<%= mobileNo %>"><br>
-		User Name <input type="text" name="userName" value="<%= userName %>"><br>
-		Password <input type="password" name="pass" value="<%= password %>"><br>
+	<form action="update" method="post">
+	<table>
+		<tr>
+			<td>Customer ID</td>
+			<td><input type="text" name="cusid" value="<%= id %>" readonly></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name" value="<%= name %>"></td>
+		</tr>
+		<tr>
+		<td>Email</td>
+		<td><input type="text" name="email" value="<%= email %>"></td>
+		</tr>
+		<tr>
+			<td>Phone number</td>
+			<td><input type="text" name="mobileNo" value="<%= mobileNo %>"></td>
+		</tr>
+		<tr>
+			<td>User name</td>
+			<td><input type="text" name="userName" value="<%= userName %>"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password" value="<%= password %>"></td>
+		</tr>		
+	</table>
+	
+		<br>
+		<input type="submit" name="submit" value="Update My Data">
 		
-		<input type="submit" name="submit" value="Update">
-		
-	</from>
+	</form>
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 package Dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -52,29 +51,29 @@ public class CustomerDBUtil {
 		
 	}
 	
-	public static boolean updatecustomer(String id, String name, String email, String mobileNo, String userName, String password) {
-		
-		try {
-			
-			con = DBConnect.getConnection();
-			stmt = con.createStatement();
-			String sql = "update customer set name='"+name+"', email='"+email+"', mobileNo='"+mobileNo+"', userName='"+userName+"', password='"+password+"'" + "where id='"+id+"'";
-			
-			int rs = stmt.executeUpdate(sql);
-			
-			if(rs > 0) {
-				isSuccess = true;
-			}
-			else {
-				isSuccess = false;
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return isSuccess;
-		
-	}
+public static boolean updatecustomer(String id, String name, String email, String mobileNo, String userName, String password) {
+    	
+    	try {
+    		
+    		con = DBConnect.getConnection();
+    		stmt = con.createStatement();
+    		String sql = "update customer set name='"+name+"',email='"+email+"',mobileNo='"+mobileNo+"',userName='"+userName+"',password='"+password+"'"
+    				+ "where id='"+id+"'";
+    		int rs = stmt.executeUpdate(sql);
+    		
+    		if(rs > 0) {
+    			isSuccess = true;
+    		}
+    		else {
+    			isSuccess = false;
+    		}
+    		
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return isSuccess;
+    }
 	
 }
