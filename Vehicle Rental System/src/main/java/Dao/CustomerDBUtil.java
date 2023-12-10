@@ -12,6 +12,7 @@ import Model.DBConnect;
 
 public class CustomerDBUtil {
 	
+	private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -48,6 +49,31 @@ public class CustomerDBUtil {
 		}
 		
 		return cus;
+		
+	}
+	
+	public static boolean updatecustomer(String id, String name, String email, String mobileNo, String userName, String password) {
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "update customer set name='"+name+"', email='"+email+"', mobileNo='"+mobileNo+"', userName='"+userName+"', password='"+password+"'" + "where id='"+id+"'";
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
 		
 	}
 	

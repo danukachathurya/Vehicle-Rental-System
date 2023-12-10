@@ -50,6 +50,14 @@
 
     <div class="profile-container">
         <c:forEach var="cus" items="${cusDetails}">
+        
+        <<c:set var="id" value="${cus.id}"/>
+        <<c:set var="name" value="${cus.name}"/>
+        <<c:set var="email" value="${cus.email}"/>
+        <<c:set var="mobileNo" value="${cus.mobileNo}"/>
+        <<c:set var="userName" value="${cus.userName}"/>
+        <<c:set var="password" value="${cus.password}"/>
+        
             <div class="profile-item">
                 <label>ID :</label>
                 <span>${cus.id}</span>
@@ -72,6 +80,19 @@
             </div>
         </c:forEach>
     </div>
+    
+    <c:url value="updatecustomer.jsp" var="cusupdate">
+    	<c:param name="id" value="${id}"/>
+    	<c:param name="name" value="${name}"/>
+    	<c:param name="email" value="${email}"/>
+    	<c:param name="mobileNo" value="${mobileNo}"/>
+    	<c:param name="userName" value="${userName}"/>
+    	<c:param name="pass" value="${password}"/>
+    </c:url>
+    
+    <a href="${cusupdate}">
+    	<input type="button" name="update" value="Edit">
+    </a>
 
 </body>
 </html>
