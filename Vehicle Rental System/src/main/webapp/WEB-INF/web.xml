@@ -32,5 +32,41 @@
 		<servlet-name>delete_customer</servlet-name>
 		<url-pattern>/delete</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+         	<servlet-name>PaymentInsertServlet</servlet-name>
+         	<servlet-class>Controller.PaymentInsertServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         	<servlet-name>PaymentInsertServlet</servlet-name>
+         	<url-pattern>/insertPayment</url-pattern>
+         </servlet-mapping>
+         
+         <servlet>
+         	<servlet-name>update_payment</servlet-name>
+         	<servlet-class>Controller.UpdatePaymentServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         	<servlet-name>update_payment</servlet-name>
+         	<url-pattern>/updatePayment</url-pattern>
+         </servlet-mapping>
+         
+         <servlet>
+         	<servlet-name>delete_payment</servlet-name>
+         	<servlet-class>Controller.DeletePaymentServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         	<servlet-name>delete_payment</servlet-name>
+         	<url-pattern>/deletePayment</url-pattern>
+         </servlet-mapping>  
+         
+         <servlet>
+         	<servlet-name>card_details</servlet-name>
+         	<servlet-class>Controller.CardServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         	<servlet-name>card_details</servlet-name>
+         	<url-pattern>/card</url-pattern>
+         </servlet-mapping>
          
 </web-app>         

@@ -8,6 +8,7 @@ import java.util.List;
 
 import Model.Customer;
 import Model.DBConnect;
+import Model.payment;
 
 public class CustomerDBUtil {
 	
@@ -133,7 +134,6 @@ public static boolean deleteCustomer(String id) {
 		return isSuccess;	
 	}
 
-		
 }
 
 
