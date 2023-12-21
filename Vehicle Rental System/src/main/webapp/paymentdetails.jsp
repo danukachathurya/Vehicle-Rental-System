@@ -81,7 +81,7 @@
 	<table>
 	<c:forEach var="pay" items="${payDetails}">
 	
-	<c:set var="pid" value="${pay.pid}"/>
+	<c:set var="pid" value="${pay.id}"/>
 	<c:set var="cusname" value="${pay.cusname}"/>
 	<c:set var="cusid" value="${pay.cusid}"/>
 	<c:set var="amount" value="${pay.amount}"/>
