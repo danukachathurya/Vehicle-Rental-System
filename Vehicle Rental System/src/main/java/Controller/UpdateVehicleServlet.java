@@ -1,7 +1,6 @@
 package Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,16 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import Dao.VehicleDBUtil;
 
-
-@WebServlet("/AddVehicleServlet")
-public class AddVehicleServlet extends HttpServlet {
+@WebServlet("/UpdateVehicleServlet")
+public class UpdateVehicleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
-		
+		int id = Integer.parseInt(request.getParameter("id"));
 		String vehicleType = request.getParameter("vehicleType");
 		String vehicleName = request.getParameter("vehicleName");
 		String owner = request.getParameter("owner");
@@ -32,18 +28,14 @@ public class AddVehicleServlet extends HttpServlet {
 		String manufacturedYear = request.getParameter("manufacturedYear");
 		String price = request.getParameter("price");
 		
-		boolean isTrue;
+		boolean isTrue = VehicleDBUtil.updateVehicle(id, vehicleType, vehicleName, owner, mobileNumber, registrationNumber, color, seats, manufacturedYear, price);
 		
-		isTrue = VehicleDBUtil.addVehicle(vehicleType, vehicleName, owner, mobileNumber, registrationNumber, color, seats, manufacturedYear, price);
-
-		if(isTrue == true){			
+		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("vehicleDetails.jsp");
 			dis.forward(request, response);
-		}else {		
-			out.println("<script type = 'text/javascript'>");
-			out.println("alert('unsuccessful');");
-			out.println("location='addItem.jsp'");
-			out.println("</script>");
+		}else {
+			RequestDispatcher dis = request.getRequestDispatcher("vehicleDetails.jsp");
+			dis.forward(request, response);
 		}
 		
 	}

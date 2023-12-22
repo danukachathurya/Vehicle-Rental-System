@@ -77,7 +77,7 @@ public class VehicleDBUtil {
 	
 	public static List<vehicle> Validate() {
 		
-		ArrayList<vehicle> pay = new ArrayList<>();
+		ArrayList<vehicle> vehicle = new ArrayList<>();
 		
 		try {
 			con = DBConnect.getConnection();
@@ -98,13 +98,13 @@ public class VehicleDBUtil {
             	String price = rs.getString(10);
             	
             	vehicle Vehicle = new vehicle(pid, vehicleType, vehicleName, owner, mobileNumber, registrationNumber, color, seats, manufacturedYear, price);
-            	pay.add(Vehicle); 
+            	vehicle.add(Vehicle); 
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return pay;
+		return vehicle;
 		
 	}
 	

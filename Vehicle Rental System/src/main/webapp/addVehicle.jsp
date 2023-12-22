@@ -87,8 +87,8 @@
 <img src="img/pay4.jpeg" class="ribbon1"><br>
 <img src="img/pay6.gif" class="ribbon2"><br>
 	<div class="center">
-	<h1>Insert Vehicle</h1>
-	<form action="insertPayment" method = "post">
+	<h1>Add Vehicle</h1>
+	<form action="add" method = "post">
 		<div class="crd">
 		Vehicle Type <input type="text" name = "vehicleType"><br>
 		</div>

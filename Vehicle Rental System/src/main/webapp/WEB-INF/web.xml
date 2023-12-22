@@ -69,4 +69,37 @@
          	<url-pattern>/card</url-pattern>
          </servlet-mapping>
          
+         <servlet>
+        <servlet-name>addVehicle</servlet-name>
+        <servlet-class>Controller.AddVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addVehicle</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>updateVehicle</servlet-name>
+        <servlet-class>Controller.UpdateVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateVehicle</servlet-name>
+        <url-pattern>/updateVehicle</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteVehicle</servlet-name>
+        <servlet-class>Controller.DeleteVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteVehicle</servlet-name>
+        <url-pattern>/deleteVehicle</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>viewVehicle</servlet-name>
+        <servlet-class>Controller.ViewVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewVehicle</servlet-name>
+        <url-pattern>/viewVehicle</url-pattern>
+    </servlet-mapping>
+         
 </web-app>         
