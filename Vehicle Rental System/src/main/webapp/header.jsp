@@ -35,6 +35,7 @@
 		text-transform:uppercase;
 		margin:10px 40px 10px 40px;
 		display: inline-block;  
+		text-decoration: none;
 	}
 	
 	nav ul li a:hover{
@@ -82,25 +83,20 @@
 			<img src="img/logo.jpg">
 		</div><!--logo -->
 		
-		<h1>Travel Lanka</h1>
+		<h1>Vehicle Rent SL</h1>
 	
 	</div><!--top-->
 		<nav>
 			<ul>
-				<li><a href="home.jsp">Home</a></li>
-				<li><a href="insertguest.jsp">Create Account</a></li>
-				<li><a href="login.jsp">Guest Profile</a></li>
-				<li><a href="insertpayment.jsp">Make payment</a></li>
-				<li><a href="bkinsert.jsp">Book Event</a></li>
+				<li><a href="home.jsp">Home</a></li>				
+				<li><a href="addVehicle.jsp">ADD Vehicle</a></li>
+				<li ><a href="login.jsp">Login</a></li>
 			</ul>
 			
 		</nav>
 		
 		<br>
-<a href="booking.jsp"><input class="cdbs" type="submit" name="submit" value="Search your Bookings"></a>
-<a href="carddetails.jsp"><input class="cdbs" type="submit" name="submit" value="Search your Payments"></a>
-<a href="adminLogin.jsp"><input class="cdb" type="submit" name="submit" value="Admin Login"></a>
-<a href="login.jsp"><input class="cdb" type="submit" name="submit" value="LOGIN"></a>
+
 
 </header>	
 <br>

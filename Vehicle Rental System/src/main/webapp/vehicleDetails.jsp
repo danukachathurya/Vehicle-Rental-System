@@ -145,9 +145,6 @@
         </a>
         <br><br>
         
-        <form action="viewVehicle" method="post">
-		     <input type="button" name="viewVehicle" value="View Vehicle Details">
-		</form>
         
         <c:url value="deleteVehicle.jsp" var="vehicledelete">
             <c:forEach var="vehicle" items="${vehicleDetails}">
