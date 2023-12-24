@@ -82,6 +82,18 @@
         <h1>Vehicle Details</h1>
         <table>
             <c:forEach var="vehicle" items="${vehicleDetails}">
+            
+	            <c:set var="id" value="${vehicle.id}"/>
+				<c:set var="vehicleType" value="${vehicle.vehicleType}"/>
+				<c:set var="vehicleName" value="${vehicle.vehicleName}"/>
+				<c:set var="owner" value="${vehicle.owner}"/>
+				<c:set var="mobileNumber" value="${vehicle.mobileNumber}"/>
+				<c:set var="registrationNumber" value="${vehicle.registrationNumber}"/>
+				<c:set var="color" value="${vehicle.color}"/>
+				<c:set var="seats" value="${vehicle.seats}"/>
+				<c:set var="manufacturedYear" value="${vehicle.manufacturedYear}"/>
+				<c:set var="price" value="${vehicle.price}"/>
+
                 <tr>
                     <td>Vehicle ID</td>
                     <td><c:out value="${vehicle.id}" /></td>

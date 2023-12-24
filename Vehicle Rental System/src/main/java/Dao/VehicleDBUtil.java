@@ -16,13 +16,13 @@ public class VehicleDBUtil {
 	private static ResultSet rs = null;
 	
 	// Retrive Payments
-	public static List<vehicle> getAllPayment() {
+	public static List<vehicle> getAllVehicle(String vregistrationNumber) {
 		List<vehicle> vehicle = new ArrayList<>();
 		
 		try {
 			con = DBConnect.getConnection();
             stmt = con.createStatement();
-            String sql = "SELECT * FROM vehicle";
+            String sql = "SELECT * FROM vehicle where registrationNumber='"+vregistrationNumber+"'";
             rs = stmt.executeQuery(sql);
             
             while(rs.next()) {
@@ -73,7 +73,7 @@ public class VehicleDBUtil {
 		return isSuccess;
 	}
 	
-	//Validate
+	//details
 	
 	public static List<vehicle> Validate() {
 		
@@ -107,6 +107,34 @@ public class VehicleDBUtil {
 		return vehicle;
 		
 	}
+	
+	//details
+	
+	public static boolean getDetails(String registrationNumber) {
+		
+		 try {
+			 		 
+			    con = DBConnect.getConnection();
+				stmt = con.createStatement();
+				String sql ="select * from adds where registrationNumber='"+registrationNumber+"'";
+				rs = stmt.executeQuery(sql) ;
+				
+				if(rs.next()) {
+					isSuccess = true ;
+				}else {
+					isSuccess = false ;
+				}
+			 }
+			 
+			 catch(Exception e){
+				 
+				 e.printStackTrace(); 
+			 }
+			
+			return isSuccess ;
+			
+			}
+
 	
 	//update
 	public static boolean updateVehicle(int id, String vehicleType, String vehicleName, String owner, String mobileNumber, String registrationNumber, String color, String seats, String manufacturedYear, String price) {

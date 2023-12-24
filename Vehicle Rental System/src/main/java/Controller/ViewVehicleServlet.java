@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,17 +21,26 @@ public class ViewVehicleServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		VehicleDBUtil.Validate();
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 		
-		try {
-			List<vehicle> vehicleDetails = VehicleDBUtil.Validate();
-			request.setAttribute("vehicleDetails", vehicleDetails);
-		} catch(Exception e){
-			e.printStackTrace();
+		String registrationNumber = request.getParameter("registrationNumber");
+		
+		boolean isTrue;
+		isTrue= VehicleDBUtil.getDetails(registrationNumber) ;
+		
+		if(isTrue== true) {
+			List<vehicle> vehicleDetails = VehicleDBUtil.Validate() ;
+			request.setAttribute("vehicleDetails", vehicleDetails) ;
+			
+			RequestDispatcher dis = request.getRequestDispatcher("vehicleDetails.jsp");
+			dis.forward(request, response);
+		}else {
+			out.println("<script type='text/javascript'>");
+			out.println("alert('It is not available');");
+			out.println("location='entry.jsp'");
+			out.println("</script>");
 		}
-		
-		RequestDispatcher dis = request.getRequestDispatcher("vehicleDetails.jsp");
-		dis.forward(request, response);
 	}
 
 }
